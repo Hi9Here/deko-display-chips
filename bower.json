@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#~1.11.2",
-    "paper-chip": "*"
+    "paper-chip": "bendavis78/paper-chip"
   },
   "devDependencies": {
     "iron-test-helpers": "*",
