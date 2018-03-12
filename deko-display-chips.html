@@ -1,0 +1,35 @@
+<link rel="import" href="../paper-chip/paper-chip.html">
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<deko-display-chips></deko-display-chips>` display chips for deko
+  @demo demo.html
+-->
+<dom-module id="deko-display-chips">
+  <template>
+    <style>:host {display:block;position: fixed;bottom: 92px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap}</style>
+    <template is="dom-repeat" items="{{items}}">
+      <template is="dom-if" if="[[!item.text]]">
+        <paper-chip on-remove="[[item.onRemove]]" single-line>
+          <div slot="label">[[item]]</div>
+        </paper-chip>
+      </template>
+      <template is="dom-if" if="[[item.text]]">
+        <paper-chip on-remove="[[item.onRemove]]" removable="[[item.removable]]" single-line>
+          <template is="dom-if" if="[[item.image]]">
+            <img slot="icon" src="[[item.image]]" />
+          </template>
+          <div slot="label">[[item.text]]</div>
+        </paper-chip>
+      </template>
+    </template>
+    
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "deko-display-chips",
+    properties:{
+      items:Array,
+    },
+  })
+</script>
