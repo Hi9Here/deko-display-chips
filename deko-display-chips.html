@@ -22,7 +22,6 @@
         </paper-chip>
       </template>
     </template>
-    
   </template>
 </dom-module>
 <script>
@@ -52,6 +51,7 @@
       }, this.fireChip)(e,this.items[d]) 
     },
     findRemove: function(e){
+      var d 
       this.items.reduce(function(funct, chip, i) {
         if (chip.text === e.target.innerText) {
           d = i
