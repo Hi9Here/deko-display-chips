@@ -35,7 +35,7 @@
       var that = this
       this.items.reduce(function(funct, chip, i) {
         if (chip.text === e.target.innerText) {
-          d = i
+          d = chip
           if (chip.onTap) {
             return chip.onTap
           }
@@ -43,14 +43,14 @@
         } else {
           return funct
         }
-      }, that.fire)("picked",e,that.items[d]) 
+      }, that.fire)("picked", d)
     },
     findRemove: function(e){
       var d 
       var that = this
       this.items.reduce(function(funct, chip, i) {
         if (chip.text === e.target.innerText) {
-          d = i
+          d = chip
           if (chip.onRemove) {
             return chip.onRemove
           }
@@ -58,7 +58,7 @@
         } else {
           return funct
         }
-      }, that.fire)("unpicked",e,that.items[d]) 
+      }, that.fire)("unpicked", d)
     }
   })
 </script>
