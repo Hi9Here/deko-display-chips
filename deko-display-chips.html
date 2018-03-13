@@ -30,12 +30,6 @@
     properties:{
       items: Array,
     },
-    fireChip: function(e, d) {
-      this.fire("picked", {
-        e: e, 
-        d: d,
-      }) 
-    },
     findTap: function(e) {
       var d 
       this.items.reduce(function(funct, chip, i) {
@@ -48,7 +42,7 @@
         } else {
           return funct
         }
-      }, this.fireChip)(e,this.items[d]) 
+      }, this.fire)("picked",e,this.items[d]) 
     },
     findRemove: function(e){
       var d 
@@ -62,7 +56,7 @@
         } else {
           return funct
         }
-      }, this.fireChip)(e,this.items[d]) 
+      }, this.fire)("unpicked",e,this.items[d]) 
     }
   })
 </script>
