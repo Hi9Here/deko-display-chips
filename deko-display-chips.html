@@ -32,6 +32,7 @@
     },
     findTap: function(e) {
       var d 
+      var that = this
       this.items.reduce(function(funct, chip, i) {
         if (chip.text === e.target.innerText) {
           d = i
@@ -42,10 +43,11 @@
         } else {
           return funct
         }
-      }, this.fire)("picked",e,this.items[d]) 
+      }, that.fire)("picked",e,this.items[d]) 
     },
     findRemove: function(e){
       var d 
+      var that = this
       this.items.reduce(function(funct, chip, i) {
         if (chip.text === e.target.innerText) {
           d = i
@@ -56,7 +58,7 @@
         } else {
           return funct
         }
-      }, this.fire)("unpicked",e,this.items[d]) 
+      }, that.fire)("unpicked",e,this.items[d]) 
     }
   })
 </script>
