@@ -35,7 +35,13 @@
       this.fire("picked", e) 
     },
     findTap: function(e) {
-      this.fire("picked", e) 
+      this.items.reduce(function(funct, chip) {
+        if (chip.text === e.target.innerText && chip.onTap) {
+          return chip.onTap
+        } else {
+          return funct
+        }
+      }, this.findChip(e)) 
     },
     findRemove: function(e){
       this.fire("picked", e) 
