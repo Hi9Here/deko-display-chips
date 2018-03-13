@@ -9,12 +9,12 @@
     <style>:host {display:block;position: fixed;bottom: 92px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap}</style>
     <template is="dom-repeat" items="{{items}}">
       <template is="dom-if" if="[[!item.text]]">
-        <paper-chip on-tap="fireChip" on-remove="[[item.onRemove]]" single-line>
+        <paper-chip on-tap="fireChip" single-line>
           <div class="label" slot="label">[[item]]</div>
         </paper-chip>
       </template>
       <template is="dom-if" if="[[item.text]]">
-        <paper-chip on-tap="fireChip" on-remove="[[item.onRemove]]" removable="[[item.removable]]" single-line>
+        <paper-chip on-tap="[[item.onTap]]" on-remove="[[item.onRemove]]" removable="[[item.removable]]" single-line>
           <template is="dom-if" if="[[item.image]]">
             <img slot="icon" src="[[item.image]]" />
           </template>
