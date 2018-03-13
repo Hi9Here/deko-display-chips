@@ -34,7 +34,7 @@
       var d 
       var that = this
       this.items.reduce(function(funct, chip, i) {
-        if (chip.text === e.target.innerText) {
+        if (chip.text.trim() === e.target.innerText.trim().replace("\n","")) {
           d = chip
           if (chip.onTap) {
             return chip.onTap
@@ -49,7 +49,7 @@
       var d 
       var that = this
       this.items.reduce(function(funct, chip, i) {
-        if (chip.text === e.target.innerText) {
+        if (chip.text.trim() === e.target.innerText.trim().replace("\n","")) {
           d = chip
           if (chip.onRemove) {
             return chip.onRemove
