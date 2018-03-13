@@ -31,8 +31,11 @@
     properties:{
       items: Array,
     },
-    fireChip: function(e) {
-      this.fire("picked", e) 
+    fireChip: function(e, d) {
+      this.fire("picked", {
+        e: e, 
+        d: d,
+      }) 
     },
     findTap: function(e) {
       var d 
