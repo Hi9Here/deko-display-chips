@@ -35,22 +35,31 @@
       this.fire("picked", e) 
     },
     findTap: function(e) {
-      this.items.reduce(function(funct, chip) {
-        if (chip.text === e.target.innerText && chip.onTap) {
-          return chip.onTap
+      var d 
+      this.items.reduce(function(funct, chip, i) {
+        if (chip.text === e.target.innerText) {
+          d = i
+          if (chip.onTap) {
+            return chip.onTap
+          }
+          return funct
         } else {
           return funct
         }
-      }, this.findChip)(e) 
+      }, this.findChip)(e,this.items[d]) 
     },
     findRemove: function(e){
-      this.items.reduce(function(funct, chip) {
-        if (chip.text === e.target.innerText && chip.onRemove) {
-          return chip.onRemove
+      this.items.reduce(function(funct, chip, i) {
+        if (chip.text === e.target.innerText) {
+          d = i
+          if (chip.onRemove) {
+            return chip.onRemove
+          }
+          return funct
         } else {
           return funct
         }
-      }, this.findChip)(e) 
+      }, this.findChip)(e,this.items[d]) 
     }
   })
 </script>
