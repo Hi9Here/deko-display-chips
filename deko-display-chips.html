@@ -46,7 +46,7 @@
         } else {
           return funct
         }
-      }, this.findChip)(e,this.items[d]) 
+      }, this.fireChip)(e,this.items[d]) 
     },
     findRemove: function(e){
       this.items.reduce(function(funct, chip, i) {
@@ -59,7 +59,7 @@
         } else {
           return funct
         }
-      }, this.findChip)(e,this.items[d]) 
+      }, this.fireChip)(e,this.items[d]) 
     }
   })
 </script>
