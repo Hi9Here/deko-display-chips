@@ -10,7 +10,7 @@
     <template is="dom-repeat" items="{{items}}">
       <template is="dom-if" if="[[!item.text]]">
         <paper-chip on-tap="fireChip" single-line>
-          <div class="label" slot="label">[[item]]</div>
+          <div class="label" slot="label">[[item]] #fixMe!</div>
         </paper-chip>
       </template>
       <template is="dom-if" if="[[item.text]]">
