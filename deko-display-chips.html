@@ -9,7 +9,7 @@
     <style>:host {display:block;position: fixed;bottom: 92px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap}</style>
     <template is="dom-repeat" items="{{items}}">
       <template is="dom-if" if="[[!item.text]]">
-        <paper-chip on-tap="fireChip" single-line>
+        <paper-chip single-line>
           <div class="label" slot="label">[[item]] #fixMe!</div>
         </paper-chip>
       </template>
