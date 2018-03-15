@@ -8,7 +8,7 @@
   <template>
     <style>:host {display:block;position: fixed;bottom: 92px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap}</style>
     <template is="dom-repeat" items="{{items}}">
-      <label for="[[item.labelFor]]">
+      <label for$="[[item.labelFor]]">
         <paper-chip on-tap="findTap" chip$="[[item]]" on-remove="findRemove" removable="[[item.removable]]" single-line>
           <template is="dom-if" if="[[item.image]]">
             <img slot="icon" src="[[item.image]]" />
