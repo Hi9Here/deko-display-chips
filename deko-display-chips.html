@@ -8,19 +8,14 @@
   <template>
     <style>:host {display:block;position: fixed;bottom: 92px;justify-content: space-evenly;flex: auto;width: 100%;display: flex;flex-wrap: wrap}</style>
     <template is="dom-repeat" items="{{items}}">
-      <template is="dom-if" if="[[!item.text]]">
-        <paper-chip single-line>
-          <div class="label" slot="label">[[item]] #fixMe!</div>
-        </paper-chip>
-      </template>
-      <template is="dom-if" if="[[item.text]]">
+      <label for="[[item.labelFor]]">
         <paper-chip on-tap="findTap" chip$="[[item]]" on-remove="findRemove" removable="[[item.removable]]" single-line>
           <template is="dom-if" if="[[item.image]]">
             <img slot="icon" src="[[item.image]]" />
           </template>
           <div class="label" slot="label">[[item.text]]</div>
         </paper-chip>
-      </template>
+      </label>
     </template>
   </template>
 </dom-module>
