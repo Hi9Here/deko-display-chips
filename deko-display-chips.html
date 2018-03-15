@@ -33,7 +33,7 @@
     findTap: function(e) {
       var d 
       this.items.reduce(function(funct, chip, i) {
-        if (chip.text === e.target.innerText.replace("\n","")) {
+        if (chip.text.trim() === e.target.innerText.replace("\n","").trim()) {
           d = chip
           if (chip.onTap) {
             return chip.onTap
