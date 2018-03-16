@@ -11,7 +11,7 @@
       <label for$="[[item.labelFor]]">
         <paper-chip on-tap="findTap" chip$="[[item]]" on-remove="findRemove" removable="[[item.removable]]" single-line>
           <template is="dom-if" if="[[item.image]]">
-            <img slot="icon" src="[[item.image]]" />
+            <img class="icon" slot="icon" src="[[item.image]]" style="height:64px" />
           </template>
           <div class="label" slot="label">[[item.text]]</div>
         </paper-chip>
